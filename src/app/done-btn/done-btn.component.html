@@ -1,0 +1,4 @@
+<button *ngIf="item.done else notDone" (click)="notDoneHandler()"> انجام نشده</button>
+<ng-template #notDone>
+    <button (click)="doneHandler()"> انجام شد</button>
+</ng-template>

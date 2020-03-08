@@ -1,5 +1,6 @@
 export interface IItem {
     Name: string;
     priority:number;
-    isPin:boolean;
+    isPin?:boolean;
+    done?:boolean;
 }

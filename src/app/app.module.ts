@@ -8,6 +8,7 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { PriorityPipe } from './priority.pipe';
 import { PinBtnComponent } from './pin-btn/pin-btn.component';
+import { DoneBtnComponent } from './done-btn/done-btn.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PinBtnComponent } from './pin-btn/pin-btn.component';
     AddItemComponent,
     ItemsListComponent,
     PriorityPipe,
-    PinBtnComponent
+    PinBtnComponent,
+    DoneBtnComponent
   ],
   imports: [
     BrowserModule,
