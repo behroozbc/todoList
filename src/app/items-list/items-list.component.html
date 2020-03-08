@@ -1,8 +1,20 @@
-<ul>
-    <li *ngFor="let item of itemsService.getItems()">
-        <div><span>نام کار {{item.Name}}</span></div>
-        <div>اولیت {{item.priority|priority}}</div>
-        <app-pin-btn [item]="item"></app-pin-btn>
-        <app-done-btn [item]="item"></app-done-btn>
-    </li>
-</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>نام کار</th>
+            <th>الویت</th>
+            <th>پین کردن</th>
+            <th>تغییر وضعیت انجام</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of itemsService.getItems()" [ngClass]="{'done-item':item.done}">
+            <td [innerText]="item.Name"></td>
+            <td [innerText]="item.priority|priority"></td>
+            <td><app-pin-btn [item]="item"></app-pin-btn></td>
+            <td><app-done-btn [item]="item"></app-done-btn></td>
+        </tr>
+    </tbody>
+</table>
+<button [routerLink]="'/addItem'">+</button>
