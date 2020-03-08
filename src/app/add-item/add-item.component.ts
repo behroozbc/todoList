@@ -13,11 +13,14 @@ export class AddItemComponent {
   constructor(fb: FormBuilder, private itemsSerivec: ItemsService, private router: Router) {
     this.ItemForm = fb.group({
       Name: ['', [Validators.required]],
-      priority: [2, [Validators.required]]
+      priority: [2, [Validators.required]],
+      color:['red',[Validators.required]]
     });
   }
   submitHandler() {
-    this.itemsSerivec.create({ Name: this.ItemForm.controls.Name.value, priority: +this.ItemForm.controls.priority.value, isPin: false });
+    this.itemsSerivec.create({ Name: this.ItemForm.controls.Name.value,
+       priority: +this.ItemForm.controls.priority.value,
+       color:this.ItemForm.controls.color.value});
     this.router.navigate([''])
   }
 

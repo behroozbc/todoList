@@ -1,10 +1,27 @@
 <form [formGroup]="ItemForm" (ngSubmit)="submitHandler()">
-    <label for="">نام کار :</label>
-    <input type="text" formControlName="Name">
-    <select formControlName="priority">
-        <option value="0">زیاد</option>
-        <option value="1">متوسط</option>
-        <option value="2">کم</option>
-    </select>
-    <input type="submit" value="ثبت کار" [disabled]="!ItemForm.valid">
+    <div class="form-group">
+        <input type="text" formControlName="Name" placeholder="نام کار">
+    </div>
+    <div class="selectdiv">
+        <label> الویت</label>
+        <select formControlName="priority">
+            <option value="0">زیاد</option>
+            <option value="1">متوسط</option>
+            <option value="2">کم</option>
+        </select>
+    </div>
+    <div class="selectdiv">
+        <label >رنگ</label>
+        <select formControlName="color">
+            <option value="red">
+                قرمز
+            </option>
+            <option value="blue">
+                آبی
+            </option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="ثبت کار" [disabled]="!ItemForm.valid">
+    </div>
 </form>

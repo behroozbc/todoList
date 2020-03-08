@@ -3,4 +3,5 @@ export interface IItem {
     priority:number;
     isPin?:boolean;
     done?:boolean;
+    color:string;
 }
