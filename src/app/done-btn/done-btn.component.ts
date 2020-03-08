@@ -7,13 +7,10 @@ import { ItemsService } from '../items.service';
   templateUrl: './done-btn.component.html',
   styleUrls: ['./done-btn.component.scss']
 })
-export class DoneBtnComponent implements OnInit {
+export class DoneBtnComponent{
 
   @Input() item: IItem;
   constructor(private itemsService: ItemsService) { }
-
-  ngOnInit(): void {
-  }
   doneHandler() {
     this.itemsService.doneItem(this.item);
   }

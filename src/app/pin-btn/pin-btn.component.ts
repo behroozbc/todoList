@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IItem } from '../IItem';
 import { ItemsService } from '../items.service';
 
@@ -7,12 +7,10 @@ import { ItemsService } from '../items.service';
   templateUrl: './pin-btn.component.html',
   styleUrls: ['./pin-btn.component.scss']
 })
-export class PinBtnComponent implements OnInit {
+export class PinBtnComponent {
   @Input() item: IItem;
   constructor(private itemsService: ItemsService) { }
 
-  ngOnInit(): void {
-  }
   pinHandler() {
     this.itemsService.pinItem(this.item);
   }

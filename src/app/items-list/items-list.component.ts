@@ -7,12 +7,9 @@ import { IItem } from '../IItem';
   templateUrl: './items-list.component.html',
   styleUrls: ['./items-list.component.scss']
 })
-export class ItemsListComponent implements OnInit {
-  items: IItem[];
+export class ItemsListComponent {
   constructor(public itemsService: ItemsService) { }
 
-  ngOnInit(): void {
-    this.items = this.itemsService.getItems();
-  }
+
 
 }

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.scss']
 })
-export class AddItemComponent implements OnInit {
+export class AddItemComponent {
   ItemForm: FormGroup;
   constructor(fb: FormBuilder, private itemsSerivec: ItemsService, private router: Router) {
     this.ItemForm = fb.group({
@@ -19,8 +19,6 @@ export class AddItemComponent implements OnInit {
   submitHandler() {
     this.itemsSerivec.create({ Name: this.ItemForm.controls.Name.value, priority: +this.ItemForm.controls.priority.value, isPin: false });
     this.router.navigate([''])
-  }
-  ngOnInit(): void {
   }
 
 }
