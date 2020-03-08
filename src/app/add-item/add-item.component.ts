@@ -12,11 +12,12 @@ export class AddItemComponent implements OnInit {
   ItemForm: FormGroup;
   constructor(fb: FormBuilder, private itemsSerivec: ItemsService, private router: Router) {
     this.ItemForm = fb.group({
-      Name: ['', [Validators.required]]
+      Name: ['', [Validators.required]],
+      priority:[2,[Validators.required]]
     });
   }
   submitHandler() {
-    this.itemsSerivec.create({ Name: this.ItemForm.controls.Name.value });
+    this.itemsSerivec.create({ Name: this.ItemForm.controls.Name.value,priority:+this.ItemForm.controls.priority.value });
     this.router.navigate([''])
   }
   ngOnInit(): void {

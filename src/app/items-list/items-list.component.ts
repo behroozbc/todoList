@@ -12,7 +12,8 @@ export class ItemsListComponent implements OnInit {
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
-this.items=this.itemsService.getItems();
+    this.items = this.itemsService.getItems();
+    this.items.sort((itemA, ItemB) => itemA.priority - ItemB.priority)
   }
 
 }

@@ -1,5 +1,10 @@
 <form [formGroup]="ItemForm" (ngSubmit)="submitHandler()">
     <label for="">نام کار :</label>
     <input type="text" formControlName="Name">
+    <select formControlName="priority">
+        <option value="0">زیاد</option>
+        <option value="1">متوسط</option>
+        <option value="2">کم</option>
+    </select>
     <input type="submit" value="ثبت کار" [disabled]="!ItemForm.valid">
 </form>

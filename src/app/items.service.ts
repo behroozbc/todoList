@@ -13,6 +13,8 @@ export class ItemsService {
     this.items.push(item)
   }
   getItems(){
+    console.log(this.items);
+    
     return this.items;
   }
 }

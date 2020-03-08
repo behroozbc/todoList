@@ -1,3 +1,6 @@
 <ul>
-    <li *ngFor="let item of items" [innerText]="item.Name"></li>
+    <li *ngFor="let item of items">
+        <div><span>نام کار {{item.Name}}</span></div>
+        <div>اولیت {{item.priority|priority}}</div>
+    </li>
 </ul>
