@@ -9,11 +9,10 @@ import { IItem } from '../IItem';
 })
 export class ItemsListComponent implements OnInit {
   items: IItem[];
-  constructor(private itemsService: ItemsService) { }
+  constructor(public itemsService: ItemsService) { }
 
   ngOnInit(): void {
     this.items = this.itemsService.getItems();
-    this.items.sort((itemA, ItemB) => itemA.priority - ItemB.priority)
   }
 
 }

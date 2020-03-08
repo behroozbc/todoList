@@ -1,6 +1,7 @@
 <ul>
-    <li *ngFor="let item of items">
+    <li *ngFor="let item of itemsService.getItems()">
         <div><span>نام کار {{item.Name}}</span></div>
         <div>اولیت {{item.priority|priority}}</div>
+        <app-pin-btn [item]="item"></app-pin-btn>
     </li>
 </ul>

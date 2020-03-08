@@ -1,0 +1,4 @@
+<button *ngIf="item.isPin else Pinned" (click)="unPinHandler()">unpind</button>
+<ng-template #Pinned>
+    <button (click)="pinHandler()">pin</button>
+</ng-template>

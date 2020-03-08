@@ -7,10 +7,10 @@ export class PriorityPipe implements PipeTransform {
 
   transform(value: any): string {
     switch (value) {
-      case "0":
+      case 0:
         return 'زیاد';
         break;
-      case "1":
+      case 1:
         return 'متوسط';
       case 2:
         return 'کم';
