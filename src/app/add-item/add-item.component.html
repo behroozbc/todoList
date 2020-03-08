@@ -1,1 +1,5 @@
-<p>add-item works!</p>
+<form [formGroup]="ItemForm" (ngSubmit)="submitHandler()">
+    <label for="">نام کار :</label>
+    <input type="text" formControlName="Name">
+    <input type="submit" value="ثبت کار" [disabled]="!ItemForm.valid">
+</form>
