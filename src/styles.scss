@@ -37,13 +37,15 @@ font-weight: 500;
 background: none;
 border-radius: 0;
 color: #d8d8d8;
+text-align: center;
 transition: all .15s ease;
 &:focus{
   outline: none
 }
 
 &::placeholder{
-color: rgb(234, 235, 238)
+color: rgb(234, 235, 238);
+text-align: center;
 }
 }
 .selectdiv{
