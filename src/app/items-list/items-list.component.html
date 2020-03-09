@@ -1,4 +1,17 @@
-<table *ngIf="itemsService.getItems().length!=0 else noItem">
+<div *ngIf="itemsService.getItems().length!=0"
+     class="filter">
+    <select [formControl]="colorOption"
+            class="selectdiv">
+        <option value="red">قرمز</option>
+        <option value="blue">آبی</option>
+    </select>
+    <button (click)="filterHandler()">اعمال فیلتر</button>
+    <button (click)="clearFilterHandler()">پاک کردن فیلتر</button>
+</div>
+<button [routerLink]="'/addItem'"
+        class="left">+</button>
+
+<table>
     <thead>
         <tr>
             <th>نام کار</th>
@@ -22,16 +35,7 @@
         </tr>
     </tbody>
 </table>
-<button [routerLink]="'/addItem'">+</button>
-<select [formControl]="colorOption"
-        class="selectdiv">
-    <option value="red">قرمز</option>
-    <option value="blue">آبی</option>
-</select>
-<button (click)="filterHandler()">اعمال فیلتر</button>
-<button (click)="clearFilterHandler()">پاک کردن فیلتر</button>
-<ng-template #noItem>
-    <div class="center">
-        آیتمی موجود نیست!!
-    </div>
-</ng-template>
+<div class="center"
+     *ngIf="itemsService.getItems().length==0 ">
+    آیتمی موجود نیست!!
+</div>
