@@ -1,5 +1,4 @@
-
-<table>
+<table *ngIf="itemsService.getItems().length!=0 else noItem">
     <thead>
         <tr>
             <th>نام کار</th>
@@ -9,18 +8,30 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of itemsService.getItems()" [ngClass]="{'done-item':item.done}" class="{{item.color}}">
+        <tr *ngFor="let item of itemsService.getItems()"
+            [ngClass]="{'done-item':item.done}"
+            class="{{item.color}}">
             <td [innerText]="item.Name"></td>
             <td [innerText]="item.priority|priority"></td>
-            <td><app-pin-btn [item]="item"></app-pin-btn></td>
-            <td><app-done-btn [item]="item"></app-done-btn></td>
+            <td>
+                <app-pin-btn [item]="item"></app-pin-btn>
+            </td>
+            <td>
+                <app-done-btn [item]="item"></app-done-btn>
+            </td>
         </tr>
     </tbody>
 </table>
 <button [routerLink]="'/addItem'">+</button>
-<select [formControl]="colorOption" class="selectdiv">
+<select [formControl]="colorOption"
+        class="selectdiv">
     <option value="red">قرمز</option>
     <option value="blue">آبی</option>
 </select>
 <button (click)="filterHandler()">اعمال فیلتر</button>
 <button (click)="clearFilterHandler()">پاک کردن فیلتر</button>
+<ng-template #noItem>
+    <div class="center">
+        آیتمی موجود نیست!!
+    </div>
+</ng-template>

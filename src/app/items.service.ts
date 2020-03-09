@@ -5,13 +5,12 @@ import { IItem } from './IItem';
   providedIn: 'root'
 })
 export class ItemsService {
-  totalItems: IItem[];
-  items: IItem[];
+  private totalItems: IItem[];
+  private items: IItem[];
   private _color: string;
   constructor() {
     this.totalItems = [];
     this.items = this.totalItems;
-
   }
   create(item: IItem) {
     item.done = false;
